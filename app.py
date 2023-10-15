@@ -4,6 +4,8 @@ from fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates
 from fastapi.staticfiles import StaticFiles
 
+import uvicorn 
+
 app = FastAPI()
 templates = Jinja2Templates(directory="templates")
 app.mount("/static", StaticFiles(directory="static"), name="static")
@@ -33,4 +35,10 @@ def calculate(request: Request, n: int = Form(...)):
     return templates.TemplateResponse("form.html", {"request": request, "result": result, 'n': n})
 
 
+
+if __name__ == "__main__":
+    uvicorn.run(app, host='0.0.0.0', port=8000)
+
 # uvicorn app:app --reload
+# pip install -r requirements.txt
+# CMD ["uvicorn", "app.main:app", "--proxy-headers", "--host", "0.0.0.0", "--port", "80"]
