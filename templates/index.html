@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Derangement Problem</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/">Derangement Problem</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/program">Program</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <!-- ... (your HTML above remains unchanged) -->
+
+        <div class="jumbotron">
+            <h1 class="display-4">Derangement (Hat-Check) Problem</h1>
+            <p class="lead">
+                A derangement problem is also known as a hat-check problem in probabilistic theory. This problem
+                involves assigning hats to people such that no one receives their own hat. This project is dedicated
+                to
+                solving the problem and presenting its concepts in a comprehensible manner.
+            </p>
+            <hr class="my-4">
+            <p>
+                We leverage mathematical equations and dynamic programming to efficiently compute the derangements
+                for a
+                given number of people.
+            </p>
+            <a class="btn btn-primary btn-lg" href="https://en.wikipedia.org/wiki/Derangement" role="button">Learn
+                more</a>
+            <a class="btn btn-secondary btn-lg ml-2" href="/program" role="button">Go to Program</a>
+        </div>
+
+        <!-- Section for explanation and equation goes here -->
+        <!-- ... (rest of your HTML remains unchanged) -->
+
+
+        <!-- Section for explanation and equation goes here -->
+        <div class="row">
+            <div class="col-12">
+                <h3>Function Explanation</h3>
+                <p>The function <code>derangement(n)</code> calculates the number of derangements (or permutations
+                    of the elements of a set) in which none of the elements appear in their original position. The
+                    recursive formula for the function is:</p>
+                <pre><code>def derangement(n):
+    if n == 0:
+        return 1
+    if n == 1:
+        return 0
+    return (n - 1) * (derangement(n - 1) + derangement(n - 2))
+                </code></pre>
+                <img src="/static/code.png" alt="Code Explanation Image" class="img-fluid mt-3">
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-center mt-5">
+        <div class="container p-4">
+            <p>Created by Kontawat Wisetpaitoon,6388154 for the subject ITCS425_Algorithms</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS and Popper.js -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
