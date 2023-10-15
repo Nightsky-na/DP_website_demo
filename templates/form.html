@@ -46,6 +46,12 @@
                 </div>
                 <p>Loading...</p>
             </div>
+            {% if error %}
+            <div class="alert alert-danger">
+                {{ error }}
+            </div>
+            {% endif %}
+
 
             {% if result != None %}
             <br>

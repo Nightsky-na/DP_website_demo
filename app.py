@@ -31,8 +31,13 @@ def read_form(request: Request):
 
 @app.post("/calculate")
 def calculate(request: Request, n: int = Form(...)):
+    if n < 0:
+        error_message = "Invalid input! Please enter a non-negative integer."
+        return templates.TemplateResponse("form.html", {"request": request, "error": error_message})
+
     result = derangement(n)
     return templates.TemplateResponse("form.html", {"request": request, "result": result, 'n': n})
+
 
 
 
